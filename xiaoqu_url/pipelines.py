@@ -76,5 +76,5 @@ class XiaoquUrlPipeline(object):
             item_json = json.dumps(item, ensure_ascii=False)
             f1.write(item_json + '\r\n')
             f1.close()
-            update_to_mysql(spider.tag)
+            # update_to_mysql(spider.tag)
             return item
