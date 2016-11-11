@@ -2,6 +2,7 @@
 # coding=utf-8
 
 import MySQLdb
+from xiaoqu_url.log_package.log_file import logs
 
 
 class MySQLConn(object):
@@ -19,10 +20,27 @@ class MySQLConn(object):
             self.cursor.execute(sql)
             self.db.commit()
         except Exception as e:
-            return "Some thing is wrong~"
+            logs.debug("Some thing is wrong~: %s" % e)
 
-sql = '''
-insert into url_xiaoqu_all_t (id, name, province, city, district, bizcircle, url, url_md5, site, taskstatus)
- values ('876b7145fc7805b85f8eeb12f518b68f', '迎宾小区', '吉林','长春', '绿','http://yingbinxiaoqu0431.fang.com/', 'fangtianxia', '0');
+    def select_data(self, sql):
+        data = ''
+        try:
+            self.cursor.execute(sql)
+            data = self.cursor.fetchall()
+        except Exception as e:
+            logs.debug("select failed : %s" % e)
+        return data
 
-'''
+    def update_to_table(self, sql):
+        try:
+            self.cursor.execute(sql)
+            self.db.commit()
+        except Exception as e:
+            logs.debug('update failed : %s' % e)
+
+"""
+sql = '''update url_xiaoqu_all_t set taskstatus="0" where city="长春";'''
+sql2 = '''select count(taskstatus) from url_xiaoqu_all_t where city="长春" and taskstatus="0";'''
+sql_conn = MySQLConn()
+print sql_conn.select_data(sql2)
+"""

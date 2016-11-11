@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-import logging
 import scrapy
 import ConfigParser
 from xiaoqu_url.items import XiaoquUrlItem
@@ -9,7 +8,7 @@ from xiaoqu_url.log_package.log_file import logs
 
 
 class CrawlXiaoQuSpider(scrapy.Spider):
-    name = 'xiaoqu'
+    name = 'xiaoqu_little'
     start_urls = (
         'just for look~',
     )
@@ -28,14 +27,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         for area_url in area_url_part:
             area_url_full = response.urljoin(area_url)
             logs.debug('area_url_full: %s' % area_url_full)
-            yield scrapy.Request(area_url_full, callback=self.get_sub_area)
-
-    def get_sub_area(self, response):
-        sub_area_url_part = response.xpath('//p[@id="shangQuancontain"]/a/@href').extract()[1:]
-        for sub_area_url in sub_area_url_part:
-            sub_area_url_full = response.urljoin(sub_area_url)
-            logs.debug('sub_area_url_full: %s' % sub_area_url_full)
-            yield scrapy.Request(sub_area_url_full, callback=self.get_page_num)
+            yield scrapy.Request(area_url_full, callback=self.get_page_num)
 
     def get_page_num(self, response, times=1):
         all_xiaoqu_num = response.xpath('//b[@class="findplotNum"]/text()').extract_first()
@@ -83,7 +75,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             item['site'] = self.config.get(self.spider_name, 'site')
             item['Taskstatus'] = self.config.get(self.spider_name, 'Taskstatus')
             item['district'] = response.xpath('//div[@class="finder"]/a/text()').extract()[0]
-            item['bizcircle'] = response.xpath('//div[@class="finder"]/a/text()').extract()[1]
+            item['bizcircle'] = '' # response.xpath('//div[@class="finder"]/a/text()').extract()[1]
             item['name'] = xiaoqu.xpath('dl/dd/p/a/text()').extract_first()
             item['url'] = xiaoqu.xpath('dl/dd/p/a/@href').extract_first()
             yield item
