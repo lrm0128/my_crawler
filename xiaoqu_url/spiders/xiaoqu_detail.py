@@ -26,7 +26,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
     def start_requests(self):
         mysql_conn = MySQLConn()
         city = self.config.get(self.spider_name, 'city')
-        sql = """select url, id from url_xiaoqu_all_t where city="%s" and taskstatus="0";""" % city
+        sql = """select url, id from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
             self.tag = url_tuple[1]
