@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # coding=utf-8
 
-import logging
 import scrapy
 import ConfigParser
 from xiaoqu_url.mysql_connect.mysql_connect import MySQLConn
@@ -10,7 +9,7 @@ from xiaoqu_url.log_package.log_file import logs
 
 
 class CrawlXiaoQuDetail(scrapy.Spider):
-    name = 'xiaoqu_detail'
+    name = 'xiaoqu_fang_detail'
     start_urls = (
         'www.baidu.com',
     )
@@ -50,7 +49,6 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         yield scrapy.Request(detail_url, callback=self.crawl_items)
 
     def crawl_items(self, response):
-        item = XiaoquDetailItem()
         result_dict = {}
         logs.debug('is going to check: %s' % response.url)
         basic_info = response.xpath('//dl[@class=" clearfix mr30"]')

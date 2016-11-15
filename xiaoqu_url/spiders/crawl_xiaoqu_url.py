@@ -23,12 +23,20 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         )
 
     def parse(self, response):
-        start = self.config.getint(self.spider_name, 'start')
-        area_url_part = response.xpath(self.config.get(self.spider_name, 'district_xpath')).extract()[start:]
+        district_start = self.config.getint(self.spider_name, 'district_start')
+        area_url_part = response.xpath(self.config.get(self.spider_name, 'district_xpath')).extract()[district_start:]
         for area_url in area_url_part:
             area_url_full = response.urljoin(area_url)
             logs.debug('area_url_full: %s' % area_url_full)
-            yield scrapy.Request(area_url_full, callback=self.get_page_num)
+            yield scrapy.Request(area_url_full, callback=self.get_sub_area, dont_filter=True)
+
+    def get_sub_area(self, response):
+        sub_area_start = self.config.getint(self.spider_name, 'sub_area_start')
+        sub_area_url_part = response.xpath(self.config.get(self.spider_name, 'sub_area_xpath')).extract()[sub_area_start:]
+        for sub_area_url in sub_area_url_part:
+            sub_area_url_full = response.urljoin(sub_area_url)
+            logs.debug('sub_area_url_full: %s' % sub_area_url_full)
+            yield scrapy.Request(sub_area_url_full, callback=self.get_page_num, dont_filter=True)
 
     def get_page_num(self, response, times=1):
         all_xiaoqu_num = response.xpath(self.config.get(self.spider_name, 'xiaoqu_num_xpath')).extract_first()
@@ -47,10 +55,27 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         if yushu:
             page_num += 1
         logs.debug('page_num: %s' % page_num)
-        for i in range(1, page_num+1):
-            next_page = response.url[:-6] + str(i) + '_0_0/'
-            logs.debug('next_page: %s' % next_page)
-            yield scrapy.Request(next_page, self.get_xiaoqu_url, dont_filter=True)
+        url_list = self.make_url_for_page(page_num, response.url)
+        if url_list:
+            for url in url_list:
+                logs.debug('next_page: %s' % url)
+                yield scrapy.Request(url, self.get_xiaoqu_url, dont_filter=True)
+
+    def make_url_for_page(self, page_num, url):
+        url_list = []
+        if "fang" in self.spider_name:
+            for i in range(1, page_num+1):
+                next_page = url[:-6] + str(i) + '_0_0/'
+                url_list.append(next_page)
+        elif "lianjia1" in self.spider_name:
+            for i in range(1, page_num+1):
+                next_page = url + 'pg' + str(i) + '/'
+                url_list.append(next_page)
+        elif "lianjia2" in self.spider_name:
+            for i in range(1, page_num+1):
+                next_page = url + 'd' + str(i)
+                url_list.append(next_page)
+        return url_list
 
     def get_xiaoqu_url(self, response, times=1):
         item = XiaoquUrlItem()
@@ -63,21 +88,16 @@ class CrawlXiaoQuSpider(scrapy.Spider):
                 yield scrapy.Request(response.url,
                 callback=lambda responses=response, time=times+1: self.get_xiaoqu_url(responses, time), dont_filter=True)
             return
-        elif xiaoqu_list_length != 20:
-            if times == 1:
-                logs.debug("times bubu: %s" % times)
-                yield scrapy.Request(response.url,
-                callback=lambda responses=response, time=times + 1: self.get_xiaoqu_url(responses, time), dont_filter=True)
-                return
 
         for xiaoqu in xiaoqu_list:
             item['provice'] = self.config.get(self.spider_name, 'provice')
             item['city'] = self.config.get(self.spider_name, 'city')
             item['site'] = self.config.get(self.spider_name, 'site')
             item['Taskstatus'] = self.config.get(self.spider_name, 'Taskstatus')
-            item['district'] = response.xpath(self.config.get(self.spider_name, 'distrit_xpath')).extract()[0]
-            item['bizcircle'] = '' # response.xpath('//div[@class="finder"]/a/text()').extract()[1]
+            item['district'] = xiaoqu.xpath(self.config.get(self.spider_name, 'distrit_xpath')).extract()[0]
+            item['bizcircle'] = xiaoqu.xpath(self.config.get(self.spider_name, 'bizcircle_xpath')).extract()[1]
             item['name'] = xiaoqu.xpath(self.config.get(self.spider_name, 'name_xpath')).extract_first()
-            item['url'] = xiaoqu.xpath(self.config.get(self.spider_name, 'url_xpath')).extract_first()
+            url_part = xiaoqu.xpath(self.config.get(self.spider_name, 'url_xpath')).extract_first()
+            item['url'] = response.urljoin(url_part)
             yield item
 

@@ -40,7 +40,7 @@ class MySQLConn(object):
 
 """
 sql = '''update url_xiaoqu_all_t set taskstatus="0" where city="长春";'''
-sql2 = '''select count(taskstatus) from url_xiaoqu_all_t where city="长春" and taskstatus="0";'''
+sql2 = '''select count(taskstatus) from url_xiaoqu_all_t where city="北京" and taskstatus="1";'''
 sql_conn = MySQLConn()
 print sql_conn.select_data(sql2)
 """

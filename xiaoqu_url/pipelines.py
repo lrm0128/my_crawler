@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
+import sys
 import ConfigParser
 import hashlib
 import codecs
@@ -15,6 +16,8 @@ import struct
 import datetime
 from xiaoqu_url.log_package.log_file import logs
 from xiaoqu_url.mysql_connect.mysql_connect import MySQLConn
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 
 def get_ip_address(ifname):
@@ -31,6 +34,10 @@ def update_to_mysql(tag):
     logs.debug('sql: %s' % sql)
     sql_conn = MySQLConn()
     sql_conn.update_to_table(sql)
+
+
+def my_string_process(string):
+    return string.strip()
 
 
 class XiaoquUrlPipeline(object):
@@ -64,7 +71,7 @@ class XiaoquUrlPipeline(object):
             f1.write(json_data + '\r\n')
             self.save_to_mysql(item)
             return item
-        elif spider.name == 'xiaoqu_detail':
+        elif spider.name == 'xiaoqu_fang_detail':
             config = ConfigParser.ConfigParser()
             config.read('./xiaoqu_url/config_package/xiaoqu_detail.ini')
             ip = get_ip_address('eth0')
@@ -76,5 +83,24 @@ class XiaoquUrlPipeline(object):
             item_json = json.dumps(item, ensure_ascii=False)
             f1.write(item_json + '\r\n')
             f1.close()
-            # update_to_mysql(spider.tag)
+            update_to_mysql(spider.tag)
+            return item
+        elif spider.name == 'xiaoqu_lianjia_detail':
+            config = ConfigParser.ConfigParser()
+            config.read('./xiaoqu_url/config_package/xiaoqu_detail.ini')
+            ip = get_ip_address('eth0')
+            item = dict(item)
+            for key in item:
+                if not item[key]:
+                    item[key] = 'na'
+                else:
+                    processed_val = my_string_process(item[key])
+                    item[key] = processed_val
+            f1 = codecs.open('./%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'),
+                                             datetime.datetime.now().strftime('%Y%m%d')), mode='a'
+                             )
+            item_json = json.dumps(item, ensure_ascii=False)
+            f1.write(item_json + '\r\n')
+            f1.close()
+            update_to_mysql(spider.tag)
             return item
