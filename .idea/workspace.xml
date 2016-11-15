@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dad50529-018d-4a54-baf0-af41fff612aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/middlewares.py" afterPath="$PROJECT_DIR$/xiaoqu_url/middlewares.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/mysql_connect/mysql_connect.py" afterPath="$PROJECT_DIR$/xiaoqu_url/mysql_connect/mysql_connect.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" afterPath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/settings.py" afterPath="$PROJECT_DIR$/xiaoqu_url/settings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py" />
     </list>
     <ignored path="xiaoqu_url.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +33,8 @@
       <file leaf-file-name="crawl_xiaoqu_url.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="31">
-              <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
+            <state relative-caret-position="179">
+              <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -48,12 +43,12 @@
       <file leaf-file-name="xiaoqu_lianjia_detail.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-420">
-              <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
+            <state relative-caret-position="95">
+              <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
               <folding>
                 <element signature="e#39#52#0" expanded="true" />
-                <marker date="1479195170724" expanded="true" signature="937:1045" ph="select url, url_xiaoqu_all_t" />
-                <marker date="1479195170724" expanded="true" signature="1128:1218" ph="select url, url_xiaoqu_all_t" />
+                <marker date="1479198263472" expanded="true" signature="1069:1177" ph="select url, url_xiaoqu_all_t" />
+                <marker date="1479198263472" expanded="true" signature="1260:1350" ph="select url, url_xiaoqu_all_t" />
               </folding>
             </state>
           </provider>
@@ -62,8 +57,8 @@
       <file leaf-file-name="xiaoqu_detail.ini" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="507" column="0" selection-start-line="507" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
+            <state relative-caret-position="462">
+              <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -72,23 +67,13 @@
       <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaoqu_url/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
+            <state relative-caret-position="389">
+              <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
               <folding>
                 <element signature="e#193#203#0" expanded="true" />
                 <marker date="1479195225304" expanded="true" signature="736:790" ph="update url_x... " />
                 <marker date="1479195225304" expanded="true" signature="1353:1539" ph="insert into url_xiaoqu_all_t... " />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="192.168.16.79.beijing.lianjia.xiaoqu.detail.json.20161115" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/192.168.16.79.beijing.lianjia.xiaoqu.detail.json.20161115">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,30 +117,30 @@
         <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_detail.py" />
         <option value="$PROJECT_DIR$/beijin_xiaoqu_url.log" />
         <option value="$PROJECT_DIR$/beijing_lianjia_xiaoqu.json" />
-        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py" />
         <option value="$PROJECT_DIR$/xiaoqu_url/mysql_connect/mysql_connect.py" />
         <option value="$PROJECT_DIR$/192.168.16.76.beijing.lianjia.xiaoqu.detail.json.20161114" />
         <option value="$PROJECT_DIR$/beijing_lianjia_xiaoqu_detail.log" />
-        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" />
         <option value="$PROJECT_DIR$/nanjing_lianjia_xiaoqu.json" />
         <option value="$PROJECT_DIR$/nanjing_xiaoqu_url.log" />
         <option value="$PROJECT_DIR$/tianjin_lianjia_xiaoqu.json" />
         <option value="$PROJECT_DIR$/tianjin_xiaoqu_url.log" />
         <option value="$PROJECT_DIR$/chongqing_lianjia_xiaoqu.json" />
         <option value="$PROJECT_DIR$/suzhou_xiaoqu_url.log" />
-        <option value="$PROJECT_DIR$/shanghai_xiaoqu_url.log" />
         <option value="$PROJECT_DIR$/suzhou_lianjia_xiaoqu.json" />
-        <option value="$PROJECT_DIR$/shanghai_lianjia_xiaoqu.json" />
         <option value="$PROJECT_DIR$/192.168.16.79.suzhou.lianjia.xiaoqu.detail.json.20161115" />
-        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py" />
         <option value="$PROJECT_DIR$/hangzhou_xiaoqu_url.log" />
         <option value="$PROJECT_DIR$/try.log" />
         <option value="$PROJECT_DIR$/192.168.16.79.chongqing.lianjia.xiaoqu.detail.json.20161115" />
         <option value="$PROJECT_DIR$/dongguan_lianjia_xiaoqu.json" />
         <option value="$PROJECT_DIR$/zhuhai_lianjia_xiaoqu.json" />
-        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py" />
         <option value="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
         <option value="$PROJECT_DIR$/192.168.16.79.beijing.lianjia.xiaoqu.detail.json.20161115" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py" />
+        <option value="$PROJECT_DIR$/shanghai_xiaoqu_url.log" />
+        <option value="$PROJECT_DIR$/shanghai_lianjia_xiaoqu.json" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" />
         <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" />
       </list>
     </option>
@@ -531,7 +516,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26400995" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25155666" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -718,14 +703,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shanghai_xiaoqu_url.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/beijing_lianjia_xiaoqu.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -798,70 +775,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="394" column="10" selection-start-line="394" selection-start-column="10" selection-end-line="394" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shanghai_lianjia_xiaoqu.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="22617" column="23" selection-start-line="22617" selection-start-column="23" selection-end-line="22617" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1446">
-          <caret line="13" column="24" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="e#38#51#0" expanded="true" />
-            <marker date="1479111884911" expanded="true" signature="804:873" ph="select url, url_xiaoqu_all_t" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/192.168.16.79.chongqing.lianjia.xiaoqu.detail.json.20161115">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
           <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="84" column="39" selection-start-line="84" selection-start-column="39" selection-end-line="84" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-420">
-          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
-          <folding>
-            <element signature="e#39#52#0" expanded="true" />
-            <marker date="1479195170724" expanded="true" signature="937:1045" ph="select url, url_xiaoqu_all_t" />
-            <marker date="1479195170724" expanded="true" signature="1128:1218" ph="select url, url_xiaoqu_all_t" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/xiaoqu_url/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="103" column="22" selection-start-line="103" selection-start-column="22" selection-end-line="103" selection-end-column="22" />
-          <folding>
-            <element signature="e#193#203#0" expanded="true" />
-            <marker date="1479195225304" expanded="true" signature="736:790" ph="update url_x... " />
-            <marker date="1479195225304" expanded="true" signature="1353:1539" ph="insert into url_xiaoqu_all_t... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -873,10 +791,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="50" column="30" selection-start-line="50" selection-start-column="30" selection-end-line="50" selection-end-column="30" />
+          <folding>
+            <element signature="e#193#203#0" expanded="true" />
+            <marker date="1479195225304" expanded="true" signature="736:790" ph="update url_x... " />
+            <marker date="1479195225304" expanded="true" signature="1353:1539" ph="insert into url_xiaoqu_all_t... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shanghai_xiaoqu_url.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="2490" column="41" selection-start-line="2490" selection-start-column="41" selection-end-line="2490" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shanghai_lianjia_xiaoqu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="1762" column="0" selection-start-line="1762" selection-start-column="0" selection-end-line="1762" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/crawl_xiaoqu_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="114" column="45" selection-start-line="114" selection-start-column="45" selection-end-line="114" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_fang_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-147">
+          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
+          <folding>
+            <element signature="e#38#51#0" expanded="true" />
+            <marker date="1479200671652" expanded="true" signature="879:948" ph="select url, url_xiaoqu_all_t" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="26" column="7" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_lianjia_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="62" column="41" selection-start-line="62" selection-start-column="41" selection-end-line="62" selection-end-column="41" />
+          <folding>
+            <element signature="e#39#52#0" expanded="true" />
+            <marker date="1479198263472" expanded="true" signature="1069:1177" ph="select url, url_xiaoqu_all_t" />
+            <marker date="1479198263472" expanded="true" signature="1260:1350" ph="select url, url_xiaoqu_all_t" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="507" column="0" selection-start-line="507" selection-start-column="0" selection-end-line="507" selection-end-column="0" />
+        <state relative-caret-position="462">
+          <caret line="154" column="5" selection-start-line="154" selection-start-column="5" selection-end-line="154" selection-end-column="5" />
           <folding />
         </state>
       </provider>

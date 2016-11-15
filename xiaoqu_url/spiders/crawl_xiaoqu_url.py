@@ -8,6 +8,9 @@ from xiaoqu_url.log_package.log_file import logs
 
 
 class CrawlXiaoQuSpider(scrapy.Spider):
+    """
+    抓取URL，并保存在数据库中
+    """
     name = 'xiaoqu_little'
     start_urls = (
         'just for look~',
@@ -23,6 +26,11 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         )
 
     def parse(self, response):
+        """
+        获得行政区的url
+        :param response:
+        :return:
+        """
         district_start = self.config.getint(self.spider_name, 'district_start')
         area_url_part = response.xpath(self.config.get(self.spider_name, 'district_xpath')).extract()[district_start:]
         for area_url in area_url_part:
@@ -31,6 +39,11 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             yield scrapy.Request(area_url_full, callback=self.get_sub_area, dont_filter=True)
 
     def get_sub_area(self, response):
+        """
+        获得商圈的url
+        :param response:
+        :return:
+        """
         sub_area_start = self.config.getint(self.spider_name, 'sub_area_start')
         sub_area_url_part = response.xpath(self.config.get(self.spider_name, 'sub_area_xpath')).extract()[sub_area_start:]
         for sub_area_url in sub_area_url_part:
@@ -39,6 +52,13 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             yield scrapy.Request(sub_area_url_full, callback=self.get_page_num, dont_filter=True)
 
     def get_page_num(self, response, times=1):
+        """
+        从商圈中获取指定商圈的页面数
+        注：由于房天下数据存在抖动，可能出现为空的页面，所以若出现为空的页面再访问一次，以确保能够爬取一个全量的数据
+        :param response:
+        :param times:
+        :return:
+        """
         all_xiaoqu_num = response.xpath(self.config.get(self.spider_name, 'xiaoqu_num_xpath')).extract_first()
         xiaoqu_num_per_page = len(response.xpath(self.config.get(self.spider_name, 'xiaoqu_list_xpath')))
         logs.debug('all_xiaoqu_num: %s' % all_xiaoqu_num)
@@ -62,6 +82,12 @@ class CrawlXiaoQuSpider(scrapy.Spider):
                 yield scrapy.Request(url, self.get_xiaoqu_url, dont_filter=True)
 
     def make_url_for_page(self, page_num, url):
+        """
+        制作每一页的URL，并放在列表中返回
+        :param page_num:
+        :param url:
+        :return:
+        """
         url_list = []
         if "fang" in self.spider_name:
             for i in range(1, page_num+1):
@@ -78,6 +104,12 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         return url_list
 
     def get_xiaoqu_url(self, response, times=1):
+        """
+        在列表中依次获得指定小区的关键数据
+        :param response:
+        :param times:
+        :return:
+        """
         item = XiaoquUrlItem()
         xiaoqu_list = response.xpath(self.config.get(self.spider_name, 'xiaoqu_list_xpath'))
         xiaoqu_list_length = len(xiaoqu_list)

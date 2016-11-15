@@ -23,6 +23,10 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.tag = None
 
     def start_requests(self):
+        """
+        查找数据库获得指定的URL并过滤部分不可用的URL
+        :return:
+        """
         mysql_conn = MySQLConn()
         city = self.config.get(self.spider_name, 'city')
         sql = """select url, id from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
@@ -37,6 +41,11 @@ class CrawlXiaoQuDetail(scrapy.Spider):
                 logs.debug('bad url: %s' % url_tuple[0])
 
     def parse(self, response):
+        """
+        获得详情页的url
+        :param response:
+        :return:
+        """
         logs.debug('response.url: %s' % response.url)
         raw_url = response.url
         if raw_url.endswith('esf/'):
@@ -49,6 +58,11 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         yield scrapy.Request(detail_url, callback=self.crawl_items)
 
     def crawl_items(self, response):
+        """
+        抓取需要的字段
+        :param response:
+        :return:
+        """
         result_dict = {}
         logs.debug('is going to check: %s' % response.url)
         basic_info = response.xpath('//dl[@class=" clearfix mr30"]')
@@ -57,6 +71,8 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         else:
             return
         basic_info_items = basic_info.xpath('dd')
+        # 由于房天下的数据字段数目不一致， 位置也不固定，所以先全部存储下来，放在字典中
+        # 根据键值选取需要的字段
         for line in basic_info_items:
             key = line.xpath('strong/text()').extract_first()
             val = line.xpath('text()').extract_first()

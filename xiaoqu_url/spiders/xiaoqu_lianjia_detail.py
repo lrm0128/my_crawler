@@ -21,11 +21,16 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.config = ConfigParser.ConfigParser()
         self.config.read('./xiaoqu_url/config_package/xiaoqu_detail.ini')
         self.item = XiaoquDetailItem()
+        # tag就是数据库中的id项，用于完成任务update的时候用
         self.tag = None
         self.district = district
         self.bizcircle = None
 
     def start_requests(self):
+        """
+        从数据库中取出需要的字段，并用取出的url生成request,获得response
+        :return:
+        """
         mysql_conn = MySQLConn()
         city = self.config.get(self.spider_name, 'city')
         if self.district:
@@ -47,6 +52,11 @@ class CrawlXiaoQuDetail(scrapy.Spider):
                 logs.debug('bad url: %s' % url_tuple[0])
 
     def parse(self, response):
+        """
+        在打开的详情页面获得想要的字段
+        :param response:
+        :return:
+        """
         self.item['building_area'] = self.config.get(self.spider_name, 'building_area')
         self.item['occupy_area'] = self.config.get(self.spider_name, 'occupy_area')
         self.item['house_num'] = response.xpath(self.config.get(self.spider_name, 'house_num_xpath')).extract_first()
