@@ -76,7 +76,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item['entry_rent'] = response.xpath(self.config.get(self.spider_name, 'entry_rent_xpath')).extract_first()
         self.item['entry_sale'] = response.xpath(self.config.get(self.spider_name, 'entry_sale_xpath')).extract_first()
         self.item['property_company'] = response.xpath(self.config.get(self.spider_name, 'property_company_xpath')).extract_first()
-        self.item['posi'] = response.xpath(self.config.get(self.spider_name, 'posi_xpath')).extract_first()
+        self.item['poi'] = response.xpath(self.config.get(self.spider_name, 'posi_xpath')).extract_first()
         self.item['building_num'] = response.xpath(self.config.get(self.spider_name, 'building_num_xpath')).extract_first()
         self.item['district'] = self.district
         self.item['bizcircle'] = self.bizcircle

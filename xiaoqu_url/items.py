@@ -8,6 +8,17 @@
 import scrapy
 
 
+class HubItem(scrapy.Item):
+    provice = scrapy.Field()
+    name = scrapy.Field()
+    city = scrapy.Field()
+    district = scrapy.Field()
+    bizcircle = scrapy.Field()
+    url = scrapy.Field()
+    datatype = scrapy.Field()
+    Taskstatus = scrapy.Field()
+
+
 class XiaoquUrlItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
@@ -24,7 +35,7 @@ class XiaoquUrlItem(scrapy.Item):
 class XiaoquDetailItem(scrapy.Item):
     building_area = scrapy.Field()
     occupy_area = scrapy.Field()
-    posi = scrapy.Field()
+    poi = scrapy.Field()
     house_num = scrapy.Field()
     city = scrapy.Field()
     district = scrapy.Field()

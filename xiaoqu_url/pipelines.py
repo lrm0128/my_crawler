@@ -43,11 +43,14 @@ def my_string_process(string):
 class XiaoquUrlPipeline(object):
 
     def transformd5(self, data):
-        m = hashlib.md5()
-        m.update(data)
-        return m.hexdigest()
+        if data:
+            m = hashlib.md5()
+            m.update(data)
+            return m.hexdigest()
+        else:
+            return ' '
 
-    def save_to_mysql(self, item):
+    def save_to_xiaoqu_mysql(self, item):
         sql_conn = MySQLConn()
         data = item['city'] + item['district'] + item['name']
         print "item['city'] + item['district'] + item['name']: ", data
@@ -58,7 +61,7 @@ class XiaoquUrlPipeline(object):
               % (id, item['name'], item['provice'],item['city'],item['district'],item['bizcircle'],item['url'],
               item['site'], item['Taskstatus'])
 
-        print "sql: ", sql
+        logs.debug("sql: %s", sql)
         sql_conn.inser_data(sql)
 
     def process_item(self, item, spider):
@@ -69,7 +72,7 @@ class XiaoquUrlPipeline(object):
             f1 = codecs.open('./%s' % config.get(spider.spider_name, 'json_file'), mode='a')
             json_data = json.dumps(item, ensure_ascii=False)
             f1.write(json_data + '\r\n')
-            self.save_to_mysql(item)
+            self.save_to_xiaoqu_mysql(item)
             return item
         elif spider.name == 'xiaoqu_fang_detail':
             config = ConfigParser.ConfigParser()
@@ -103,4 +106,24 @@ class XiaoquUrlPipeline(object):
             f1.write(item_json + '\r\n')
             f1.close()
             update_to_mysql(spider.tag)
+            return item
+        elif spider.name == "chengjiao_url" or spider.name == "sh_chengjiao_url":
+            config = ConfigParser.ConfigParser()
+            config.read('./xiaoqu_url/config_package/chengjiao_url_cfg.ini')
+            data = dict(item)
+            if not data['name']:
+                return "无效url"
+            url_md5 = self.transformd5(data['url'])
+            sql = """
+            insert into url_info_all_t(name, province, city, district, bizcircle, url, datatype, taskstatus, url_md5)
+            values('%s', '%s', '%s', '%s', '%s', '%s', '%s', %s, '%s');
+            """ % (data['name'], data['provice'], data['city'], data['district'], data['bizcircle'], data['url'],
+                   data['datatype'], data['Taskstatus'], url_md5)
+            logs.debug("sql: %s", sql)
+            f1 = codecs.open('./out_put/%s' % config.get(spider.spider_name, 'json_file'), mode='a')
+            json_data = json.dumps(data, ensure_ascii=False)
+            f1.write(json_data + '\r\n')
+            f1.close()
+            sql_conn = MySQLConn()
+            sql_conn.inser_data(sql)
             return item

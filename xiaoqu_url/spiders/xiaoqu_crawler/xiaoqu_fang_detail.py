@@ -99,7 +99,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item['entry_rent'] = response.url.replace('xiangqing', 'chuzu')
         self.item['entry_sale'] = response.url.replace('xiangqing', 'chushou')
         self.item['property_company'] = self.config.get(self.spider_name, 'property_company')
-        self.item['posi'] = self.config.get(self.spider_name, 'posi')
+        self.item['poi'] = self.config.get(self.spider_name, 'posi')
         yield scrapy.Request(response.url.replace('xiangqing', 'chuzu'), callback=self.rent_info)
 
     def rent_info(self, response):
