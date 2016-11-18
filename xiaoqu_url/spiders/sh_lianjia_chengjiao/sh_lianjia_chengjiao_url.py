@@ -11,7 +11,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
     """
     抓取URL，并保存在数据库中
     """
-    name = 'chengjiao_url'
+    name = 'sh_chengjiao_url'
     start_urls = (
         'just for look~',
     )
@@ -24,6 +24,45 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         self.start_urls = (
             self.config.get(self.spider_name, 'start_url'),
         )
+
+    def start_requests(self):
+        url = self.config.get(self.spider_name, "start_url")
+        yield scrapy.Request(url, meta={"cookiejar": 1},callback=self.login_process)
+
+    def login_process(self, response):
+        lt = response.xpath('//input[@name="lt"]/@value').extract_first()
+        execution = response.xpath('//input[@name="execution"]/@value').extract_first()
+        _eventId = response.xpath('//input[@name="_eventId"]/@value').extract_first()
+        logs.debug('lt: %s' % lt)
+        logs.debug('execution: %s' % execution)
+        logs.debug('_eventId: %s' % _eventId)
+        post_form = {
+            "redirect": "",
+            "verifyCode": "",
+            "username": "18729572150",
+            "password": "911027",
+            "lt": lt,
+            "execution": execution,
+            "_eventId": _eventId,
+        }
+        yield scrapy.FormRequest.from_response(
+            response,
+            meta={'cookiejar': response.meta['cookiejar']},
+            formdata=post_form,
+            callback=self.go_to_chengjiao,
+            dont_filter=True,
+        )
+
+    def go_to_chengjiao(self, response):
+        domain_city = self.config.get(self.spider_name, "domain")
+        domain_url = response.url.replace('sh', domain_city)
+        logs.debug("domain_url: %s" % domain_url)
+        chengjiao_url = domain_url + "chengjiao/"
+        logs.debug('chengjiao_url: %s' % chengjiao_url)
+        yield scrapy.Request(chengjiao_url,
+            meta={'cookiejar': response.meta['cookiejar']},
+            callback=self.parse
+            )
 
     def parse(self, response):
         """
@@ -39,6 +78,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             logs.debug('area_url_full: %s' % area_url_full)
             logs.debug('district: %s' % district)
             yield scrapy.Request(area_url_full,
+                meta={'cookiejar': response.meta['cookiejar']},
                 callback=lambda response=response, district=district: self.get_sub_area(response, district))
 
     def get_sub_area(self, response, district):
@@ -56,6 +96,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             logs.debug('sub_area_url_full: %s' % sub_area_url_full)
             logs.debug('self.bizcircle: %s' % bizcircle)
             yield scrapy.Request(sub_area_url_full,
+                meta={'cookiejar': response.meta['cookiejar']},
                 callback=lambda response=response, bizcircle=bizcircle, district=district:
                 self.get_page_num(response, district, bizcircle))
 
@@ -67,20 +108,21 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         :param times:
         :return:
         """
-        all_xiaoqu_num = response.xpath(self.config.get(self.spider_name, 'xiaoqu_num_xpath')).extract_first()
-        xiaoqu_num_per_page = len(response.xpath(self.config.get(self.spider_name, 'xiaoqu_list_xpath')))
-        logs.debug('all_xiaoqu_num: %s' % all_xiaoqu_num)
-        logs.debug('xiaoqu_num_per_page: %s' % xiaoqu_num_per_page)
+        all_chengjiao_num = response.xpath(self.config.get(self.spider_name, 'chengjiao_num_xpath')).extract_first()
+        chengjiao_num_per_page = len(response.xpath(self.config.get(self.spider_name, 'chengjiao_list_xpath')))
+        logs.debug('all_chengjiao_num: %s' % all_chengjiao_num)
+        logs.debug('chengjiao_num_per_page: %s' % chengjiao_num_per_page)
         logs.debug('times: %s' % times)
-        if not xiaoqu_num_per_page:
+        if not chengjiao_num_per_page:
             if times == 1:
                 yield scrapy.Request(response.url,
+                    meta={'cookiejar': response.meta['cookiejar']},
                     callback=lambda response=response, times=times+1, district=district, bizcircle=bizcircle:
                     self.get_page_num(response, district, bizcircle, times), dont_filter=True)
             return
 
-        page_num = int(all_xiaoqu_num) / xiaoqu_num_per_page
-        yushu = int(all_xiaoqu_num) % xiaoqu_num_per_page
+        page_num = int(all_chengjiao_num) / chengjiao_num_per_page
+        yushu = int(all_chengjiao_num) % chengjiao_num_per_page
         if yushu:
             page_num += 1
         logs.debug('page_num: %s' % page_num)
@@ -88,8 +130,10 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         if url_list:
             for url in url_list:
                 logs.debug('next_page: %s' % url)
-                yield scrapy.Request(url, callback=lambda response=response, district=district, bizcircle=bizcircle:
-                    self.get_xiaoqu_url(response, district, bizcircle), dont_filter=True)
+                yield scrapy.Request(url,
+                    meta={'cookiejar': response.meta['cookiejar']},
+                    callback=lambda response=response, district=district, bizcircle=bizcircle:
+                    self.get_chengjiao_url(response, district, bizcircle), dont_filter=True)
 
     def make_url_for_page(self, page_num, url):
         """
@@ -113,7 +157,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
                 url_list.append(next_page)
         return url_list
 
-    def get_xiaoqu_url(self, response, district, bizcircle, times=1):
+    def get_chengjiao_url(self, response, district, bizcircle, times=1):
         """
         在列表中依次获得指定小区的关键数据
         :param response:
@@ -123,27 +167,28 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         logs.debug("haha here the district is: %s" % district)
         logs.debug("haha here the bizcircle is: %s" % bizcircle)
         item = HubItem()
-        xiaoqu_list = response.xpath(self.config.get(self.spider_name, 'xiaoqu_list_xpath'))
-        xiaoqu_list_length = len(xiaoqu_list)
-        logs.debug("xiaoqu_list: %s" % xiaoqu_list_length)
+        chengjiao_list = response.xpath(self.config.get(self.spider_name, 'chengjiao_list_xpath'))
+        chengjiao_list_length = len(chengjiao_list)
+        logs.debug("chengjiao_list: %s" % chengjiao_list_length)
         logs.debug("times: %s" % times)
-        if not xiaoqu_list:
+        if not chengjiao_list:
             if times == 1:
                 yield scrapy.Request(response.url,
+                meta={'cookiejar': response.meta['cookiejar']},
                 callback=lambda responses=response, district=district, bizcircle=bizcircle, time=times+1:
-                self.get_xiaoqu_url(responses, district, bizcircle, time), dont_filter=True)
+                self.get_chengjiao_url(responses, district, bizcircle, time), dont_filter=True)
             return
 
-        for xiaoqu in xiaoqu_list:
-            print "xiaoqu: ", xiaoqu
+        for chengjiao in chengjiao_list:
+            print "chengjiao: ", chengjiao
             item['provice'] = self.config.get(self.spider_name, 'provice')
             item['city'] = self.config.get(self.spider_name, 'city')
             # item['site'] = self.config.get(self.spider_name, 'site')
             item['Taskstatus'] = self.config.get(self.spider_name, 'Taskstatus')
             item['district'] = district
             item['bizcircle'] = bizcircle
-            item['name'] = xiaoqu.xpath(self.config.get(self.spider_name, 'name_xpath')).extract_first()
-            url_part = xiaoqu.xpath(self.config.get(self.spider_name, 'url_xpath')).extract_first()
+            item['name'] = chengjiao.xpath(self.config.get(self.spider_name, 'name_xpath')).extract_first()
+            url_part = chengjiao.xpath(self.config.get(self.spider_name, 'url_xpath')).extract_first()
             item['url'] = response.urljoin(url_part)
             item['datatype'] = self.config.get(self.spider_name, 'datatype')
             logs.debug("kanghe: %s", item)

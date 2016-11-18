@@ -17,5 +17,8 @@
         scrapy crawl sh_chengjiao_url -a spider_name=sh_lianjia2_url -s LOG_FILE=自定义log文件
     其他城市：
         scrapy crawl chengjiao_url -a spider_name=cd_lianjia1_url -s LOG_FILE=自定义log文件
-
-    
+成交详情的运行命令：
+    这里由于上海、苏州和其他城市不一样，所以特别写了一个文件（取出数据的过程稍微不同）：
+        scrapy crawl sh_chengjiao_url -a spider_name=su_lianjia_url -s LOG_FILE=suzhou_lianjia_url.log
+     其余城市如下：
+        scrapy crawl chengjiao_url -a spider_name=cd_lianjia_url -s LOG_FILE=chengdu_lianjia_url.log
