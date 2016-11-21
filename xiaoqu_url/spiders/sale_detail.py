@@ -11,7 +11,7 @@ from xiaoqu_url.log_package.log_file import logs
 
 
 class CrawlXiaoQuDetail(scrapy.Spider):
-    name = 'chengjiao_lianjia_detail'
+    name = 'sale_lianjia_detail'
     start_urls = (
         'www.baidu.com',
     )
@@ -20,7 +20,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         super(CrawlXiaoQuDetail, self).__init__()
         self.spider_name = spider_name
         self.config = ConfigParser.ConfigParser()
-        self.config.read('./xiaoqu_url/config_package/chengjiao_detail_cfg.ini')
+        self.config.read('./xiaoqu_url/config_package/sale_detail_cfg.ini')
         self.item = HouseDetailItems()
         # tag就是数据库中的id项，用于完成任务update的时候用
         self.tag = None
@@ -35,10 +35,12 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         city = self.config.get(self.spider_name, 'city')
         if self.district:
             sql = """
-                    select url, url_md5, district from url_info_all_t where city="%s" and district='%s' and taskstatus=0 and datatype=deal;
+                    select url, url_md5, district from url_info_all_t where city="%s" and district='%s' and taskstatus=0 and datatype="sale";
                   """ % (city, self.district)
         else:
-            sql = """select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype=deal;""" % city
+            sql = """
+                select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype="sale";
+                  """ % city
         print 'sql__--: ', sql
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
@@ -57,6 +59,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         :return:
         """
         base_info = response.xpath(self.config.get(self.spider_name, "base_info"))
+        self.config.get(self.spider_name, "base_info")
         self.item["province"] = self.config.get(self.spider_name, "province")
         self.item["decorate_status"] = base_info.xpath(self.config.get(self.spider_name, "decorate_status_xpath")).extract_first()
         self.item["total_floor"] = base_info.xpath(self.config.get(self.spider_name, "total_floor")).extract_first()
@@ -79,4 +82,5 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item["house_year"] = base_info.xpath(self.config.get(self.spider_name, "house_year")).extract_first()
         self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %M:%M:%S')
         self.item["district"] = self.district
+        print "heheda", self.item
         yield self.item

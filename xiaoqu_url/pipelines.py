@@ -187,3 +187,52 @@ class XiaoquUrlPipeline(object):
             sql_conn = MySQLConn()
             sql_conn.inser_data(sql)
             return item
+        elif spider.name in ["ershoufang_lianjia_detail", "sh_ershoufang_lianjia_detail"]:
+            config = ConfigParser.ConfigParser()
+            config.read('./xiaoqu_url/config_package/sale_detail_cfg.ini')
+            ip = get_ip_address('eth0')
+            item = dict(item)
+            for key in item:
+                if not item[key]:
+                    item[key] = 'na'
+                else:
+                    processed_val = my_string_process(item[key])
+                    item[key] = processed_val
+            f1 = codecs.open('./out_put/%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'),
+                        datetime.datetime.now().strftime('%Y%m%d')), mode='a'
+                             )
+            item_json = json.dumps(item, ensure_ascii=False)
+            f1.write(item_json + '\r\n')
+            f1.close()
+            sql = """
+            update url_xiaoqu_all_t set taskstatus=1 where url_md5='%s'
+            """ % spider.tag
+            logs.debug("sql: %s" % sql)
+            sql_conn = MySQLConn()
+            # sql_conn.update_to_table(sql)
+            return item
+        elif spider.name == "sale_lianjia_detail":
+            print " i am in sale_lianjia_detail"
+            config = ConfigParser.ConfigParser()
+            config.read('./xiaoqu_url/config_package/sale_detail_cfg.ini')
+            ip = get_ip_address('eth0')
+            item = dict(item)
+            for key in item:
+                if not item[key]:
+                    item[key] = 'na'
+                else:
+                    processed_val = my_string_process(item[key])
+                    item[key] = processed_val
+            f1 = codecs.open('./out_put/%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'),
+                                                     datetime.datetime.now().strftime('%Y%m%d')), mode='a'
+                             )
+            item_json = json.dumps(item, ensure_ascii=False)
+            f1.write(item_json + '\r\n')
+            f1.close()
+            sql = """
+                      update url_info_all_t set taskstatus=1 where url_md5='%s'
+                  """ % spider.tag
+            logs.debug("sql: %s" % sql)
+            sql_conn = MySQLConn()
+            sql_conn.update_to_table(sql)
+            return item
