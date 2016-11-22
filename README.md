@@ -20,5 +20,10 @@
 成交详情的运行命令：
     这里由于上海、苏州和其他城市不一样，所以特别写了一个文件（取出数据的过程稍微不同）：
         scrapy crawl sh_chengjiao_url -a spider_name=su_lianjia_url -s LOG_FILE=suzhou_lianjia_url.log
-     其余城市如下：
+    其余城市如下：
         scrapy crawl chengjiao_url -a spider_name=cd_lianjia_url -s LOG_FILE=chengdu_lianjia_url.log
+挂牌URL的运行命令：
+    对于上海的问题做了一个简单的策略：
+    scrapy crawl ershoufang_url -a spider_name=sh_lianjia2_url -s LOG_FILE=shanghaidededed.log
+挂牌详情的运行命令：
+    scrapy crawl ershoufang_detail -a spider_name=sh_ershoufang_lianjia_house -s LOG_FILE=shanghaidededed.log

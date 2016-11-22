@@ -11,7 +11,7 @@ from xiaoqu_url.log_package.log_file import logs
 
 
 class CrawlXiaoQuDetail(scrapy.Spider):
-    name = 'sale_lianjia_detail'
+    name = 'ershoufang_detail'
     start_urls = (
         'www.baidu.com',
     )
@@ -61,26 +61,30 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         base_info = response.xpath(self.config.get(self.spider_name, "base_info"))
         self.config.get(self.spider_name, "base_info")
         self.item["province"] = self.config.get(self.spider_name, "province")
-        self.item["decorate_status"] = base_info.xpath(self.config.get(self.spider_name, "decorate_status_xpath")).extract_first()
-        self.item["total_floor"] = base_info.xpath(self.config.get(self.spider_name, "total_floor")).extract_first()
+        self.item["decorate_status"] = base_info.xpath(self.config.get(self.spider_name, "decorate_status_xpath")).re_first('\S+')
+        self.item["total_floor"] = base_info.xpath(self.config.get(self.spider_name, "total_floor")).re_first('\S+')
         self.item["site"] = self.config.get(self.spider_name, "site")
-        self.item["house_orientation"] = base_info.xpath(self.config.get(self.spider_name, "house_orientation")).extract_first()
-        self.item["total_price"] = base_info.xpath(self.config.get(self.spider_name, "total_price")).extract_first()
-        self.item["xiaoqu_id"] = response.xpath(self.config.get(self.spider_name, "xiaoqu_id")).extract_first()
+        self.item["house_orientation"] = base_info.xpath(self.config.get(self.spider_name, "house_orientation")).re_first('\S+')
+        self.item["total_price"] = base_info.xpath(self.config.get(self.spider_name, "total_price")).re_first('\S+')
+        self.item["xiaoqu_id"] = response.xpath(self.config.get(self.spider_name, "xiaoqu_id")).re_first('\S+')
         self.item["house_type"] = self.config.get(self.spider_name, "house_type")
-        self.item["deal_time"] = response.xpath(self.config.get(self.spider_name, "deal_time")).extract_first()
+        self.item["deal_time"] = response.xpath(self.config.get(self.spider_name, "deal_time")).re_first('\S+')
         self.item["city"] = self.config.get(self.spider_name, "city")
         self.item["pub_time"] = self.config.get(self.spider_name, "pub_time")
         self.item["deal_status"] = self.config.getint(self.spider_name, "deal_status")
-        self.item["name"] = response.xpath(self.config.get(self.spider_name, "name")).extract_first()
-        self.item["idx"] = response.xpath(self.config.get(self.spider_name, "idx")).extract_first()
+        self.item["name"] = response.xpath(self.config.get(self.spider_name, "name")).re_first('\S+')
+        self.item["idx"] = response.xpath(self.config.get(self.spider_name, "idx")).re_first('\S+')
         self.item["area"] = response.xpath(self.config.get(self.spider_name, "area")).extract_first()
-        self.item["house_structure"] = response.xpath(self.config.get(self.spider_name, "house_structure")).extract_first()
-        self.item["floor"] = base_info.xpath(self.config.get(self.spider_name, "floor")).extract_first()
-        self.item["unit_price"] = base_info.xpath(self.config.get(self.spider_name, "unit_price")).extract_first()
+        if self.spider_name in ['sh_ershoufang_lianjia_house', 'su_ershoufang_lianjia_house']:
+            house_structure_elements = response.xpath(self.config.get(self.spider_name, "house_structure")).re('(\d)<.*?>(\w)')
+            self.item["house_structure"] = ''.join(house_structure_elements)
+        else:
+            self.item["house_structure"] = response.xpath(self.config.get(self.spider_name, "house_structure")).extract_first()
+        self.item["floor"] = base_info.xpath(self.config.get(self.spider_name, "floor")).re_first('\S+')
+        self.item["unit_price"] = base_info.xpath(self.config.get(self.spider_name, "unit_price")).re_first('\S+')
         self.item["url"] = response.url
-        self.item["house_year"] = base_info.xpath(self.config.get(self.spider_name, "house_year")).extract_first()
-        self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %M:%M:%S')
+        self.item["house_year"] = base_info.xpath(self.config.get(self.spider_name, "house_year")).re_first('\S+')
+        self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.item["district"] = self.district
         print "heheda", self.item
         yield self.item

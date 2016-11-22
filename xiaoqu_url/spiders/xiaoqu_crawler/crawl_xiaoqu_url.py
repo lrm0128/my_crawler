@@ -11,7 +11,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
     """
     抓取URL，并保存在数据库中
     """
-    name = 'xiaoqu_little'
+    name = 'xiaoqu_url'
     start_urls = (
         'just for look~',
     )
@@ -20,7 +20,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         super(CrawlXiaoQuSpider, self).__init__()
         self.spider_name = spider_name
         self.config = ConfigParser.ConfigParser()
-        self.config.read('./xiaoqu_url/config_package/xiaoqu_cfg.ini')
+        self.config.read('./xiaoqu_url/config_package/xiaoqu_cfg_url.ini')
         self.start_urls = (
             self.config.get(self.spider_name, 'start_url'),
         )

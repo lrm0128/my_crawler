@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dad50529-018d-4a54-baf0-af41fff612aa" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/sale_detail_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/sale_detail_cfg.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/sale_url_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/sale_url_cfg.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" afterPath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/sale_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/sale_detail.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py" />
+    </list>
+    <ignored path="xiaoqu_url.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <ignored path=".idea/dataSources.local.xml" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/xiaoqu_url$mysql_conn.coverage" NAME="mysql_conn Coverage Results" MODIFIED="1479265130278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/xiaoqu_url/mysql_connect" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="xiaoqu_url" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="sale_detail.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/sale_detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+              <folding>
+                <element signature="e#39#52#0" expanded="true" />
+                <marker date="1479728602862" expanded="true" signature="1053:1153" ph="select url, url_info_all_t" />
+                <marker date="1479728602862" expanded="true" signature="1053:1173" ph="select url, url_info_all_t" />
+                <marker date="1479728602862" expanded="true" signature="1273:1355" ph="select url, url_info_all_t" />
+                <marker date="1479728602862" expanded="true" signature="1273:1375" ph="select url, url_info_all_t" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/xiaoqu_url/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="334">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+              <folding>
+                <element signature="e#193#203#0" expanded="true" />
+                <marker date="1479800580428" expanded="true" signature="3027:3201" ph="insert into url_xiaoqu_all_t... " />
+                <marker date="1479800580428" expanded="true" signature="4156:4210" ph="update url_x... " />
+                <marker date="1479800580428" expanded="true" signature="4661:4839" ph="insert into url_info_all_t... " />
+                <marker date="1479800580428" expanded="true" signature="5809:5866" ph="update url_i... " />
+                <marker date="1479800580428" expanded="true" signature="6373:6564" ph="insert into url_info_all_t... " />
+                <marker date="1479800580428" expanded="true" signature="7523:7580" ph="update url_i... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chengjiao_detail.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1617">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#52#0" expanded="true" />
+                <marker date="1479728602870" expanded="true" signature="1065:1165" ph="select url, url_info_all_t" />
+                <marker date="1479728602870" expanded="true" signature="1065:1185" ph="select url, url_info_all_t" />
+                <marker date="1479728602870" expanded="true" signature="1268:1350" ph="select url, url_info_all_t" />
+                <marker date="1479728602870" expanded="true" signature="1268:1370" ph="select url, url_info_all_t" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="xiaoqu_cfg_url.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg_url.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_pri/sh_lianjia_url.py" />
+        <option value="$PROJECT_DIR$/beijing_lianjia_chengjiao.json" />
+        <option value="$PROJECT_DIR$/out_put/beijing_lianjia_chengjiao.json" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/items.py" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.115.dongguan.lianjia.chengjiao.json.20161117" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_detail.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_url.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao_uri/sh_lianjia_chengjiao.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao_uri/sh_lianjia_chengjiao_url.py" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.115.shanghai.lianjia.chengjiao.json.20161118" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" />
+        <option value="$PROJECT_DIR$/suzhou_lianjia_url.log" />
+        <option value="$PROJECT_DIR$/out_put/suzhou_lianjia_chengjiao.json" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.115.suzhou.lianjia.chengjiao.json.20161118" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" />
+        <option value="$PROJECT_DIR$/chendu_ershoufang_url.log" />
+        <option value="$PROJECT_DIR$/out_put/chengdu_lianjia_chengjiao.json" />
+        <option value="$PROJECT_DIR$/shanghai_ershoufang_url.log" />
+        <option value="$PROJECT_DIR$/out_put/shanghai_lianjia_chengjiao.json" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/sale_url.py" />
+        <option value="$PROJECT_DIR$/tianjing_ershoufang_url.log" />
+        <option value="$PROJECT_DIR$/out_put/tianjin_lianjia_ershoufang.json" />
+        <option value="$PROJECT_DIR$/heheda.txt" />
+        <option value="$PROJECT_DIR$/heheda.html" />
+        <option value="$PROJECT_DIR$/dg_ershoufang_lianjia_house.log" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.shanghai.lianjia.chengjiao.json.20161121" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.dongguan.lianjia.ershoufang.json.20161121" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.chengdu.lianjia.chengjiao.json.20161121" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.chengdu.lianjia.ershoufang.json.20161121" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/sale_url_cfg.ini" />
+        <option value="$PROJECT_DIR$/out_put/shanghai_lianjia_ershoufang.json" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/sale_detail_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/sale_detail.py" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.shanghai.lianjia.ershoufang.json.20161121" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.zhuhai.lianjia.xiaoqu.json.20161121" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/sale_detail_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/sale_url_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py" />
+        <option value="$PROJECT_DIR$/out_put/192.168.1.101.beijing.lianjia.chengjiao.json.20161122" />
+        <option value="$PROJECT_DIR$/heheda.log" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
+        <option value="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="61" />
+    <option name="y" value="-4" />
+    <option name="width" value="1619" />
+    <option name="height" value="1054" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all_spider_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all_spider_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all_spider_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all_spider_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="all_spider_crawler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out_put" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/xiaoqu_url/spiders" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler" />
+      <recent name="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.mysql_conn">
+    <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="TARGET" value="" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="PyBehaveRunConfigurationType" factoryName="Behave">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PyLettuceRunConfigurationType" factoryName="Lettuce">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="ADDITIONAL_ARGS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <module name="xiaoqu_url" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Attests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="testToRun" value="" />
+      <option name="keywords" value="" />
+      <option name="params" value="" />
+      <option name="USE_PARAM" value="false" />
+      <option name="USE_KEYWORD" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="mysql_conn" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="/usr/bin/python2.7" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/xiaoqu_url/mysql_connect" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="xiaoqu_url" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xiaoqu_url/mysql_connect/mysql_connect.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.mysql_conn" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dad50529-018d-4a54-baf0-af41fff612aa" name="Default" comment="" />
+      <created>1478587999788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1478587999788</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="61" y="-4" width="1619" height="1054" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20623806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32851985" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27508092" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3279396" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/beijing_lianjia_chengjiao.json" />
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dongguan_chengjiao_xiangqing" />
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.115.dongguan.lianjia.chengjiao.json.20161117" />
+    <entry file="file://$PROJECT_DIR$/shanghai_lianjia_url.log" />
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.115.shanghai.lianjia.chengjiao.json.20161118" />
+    <entry file="file://$PROJECT_DIR$/suzhou_try.log" />
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.115.suzhou.lianjia.chengjiao.json.20161118" />
+    <entry file="file://$PROJECT_DIR$/out_put/suzhou_lianjia_chengjiao.json" />
+    <entry file="file://$PROJECT_DIR$/suzhou_lianjia_url.log" />
+    <entry file="file://$PROJECT_DIR$/chendu_ershoufang_url.log" />
+    <entry file="file://$PROJECT_DIR$/shanghai_ershoufang_url.log" />
+    <entry file="file://$PROJECT_DIR$/out_put/shanghai_lianjia_chengjiao.json" />
+    <entry file="file://$PROJECT_DIR$/tianjing_ershoufang_url.log" />
+    <entry file="file://$PROJECT_DIR$/out_put/tianjin_lianjia_ershoufang.json" />
+    <entry file="file://$PROJECT_DIR$/heheda.html" />
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.dongguan.lianjia.ershoufang.json.20161118" />
+    <entry file="file://$PROJECT_DIR$/out_put/dongguan_lianjia_ershoufang.json" />
+    <entry file="file://$PROJECT_DIR$/dongguan_lianjia_url.log" />
+    <entry file="file://$PROJECT_DIR$/dg_ershoufang_lianjia_house.log" />
+    <entry file="file://$PROJECT_DIR$/out_put/chengdu_lianjia_chengjiao.json" />
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao/sh_lianjia_chengjiao_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="180" column="0" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.shanghai.lianjia.chengjiao.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_lianjia_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao/sh_lianjia_chengjiao.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="82" column="23" selection-start-line="82" selection-start-column="23" selection-end-line="82" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.dongguan.lianjia.ershoufang.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/chengdu_lianjia_ershoufang.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.chengdu.lianjia.chengjiao.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.chengdu.lianjia.ershoufang.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/shanghai_lianjia_ershoufang.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="25" column="60" selection-start-line="25" selection-start-column="60" selection-end-line="25" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.shanghai.lianjia.ershoufang.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.zhuhai.lianjia.xiaoqu.json.20161121">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="113" column="23" selection-start-line="113" selection-start-column="23" selection-end-line="113" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-546">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="169" column="10" selection-start-line="169" selection-start-column="10" selection-end-line="169" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_detail.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="620" column="0" selection-start-line="620" selection-start-column="0" selection-end-line="620" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/sale_url_cfg.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="189" column="12" selection-start-line="189" selection-start-column="12" selection-end-line="189" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/sale_detail_cfg.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="516">
+          <caret line="309" column="0" selection-start-line="309" selection-start-column="0" selection-end-line="309" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownFxPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="24">
+            <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_fang_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/sale_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/sale_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
+          <folding>
+            <element signature="e#39#52#0" expanded="true" />
+            <marker date="1479728602862" expanded="true" signature="1053:1153" ph="select url, url_info_all_t" />
+            <marker date="1479728602862" expanded="true" signature="1053:1173" ph="select url, url_info_all_t" />
+            <marker date="1479728602862" expanded="true" signature="1273:1355" ph="select url, url_info_all_t" />
+            <marker date="1479728602862" expanded="true" signature="1273:1375" ph="select url, url_info_all_t" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/xiaoqu_cfg_url.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/changchun_fangtianxia_xiaoqu.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1039">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="285" column="23" selection-start-line="285" selection-start-column="23" selection-end-line="285" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.beijing.lianjia.chengjiao.json.20161122">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="78" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#52#0" expanded="true" />
+            <marker date="1479728602870" expanded="true" signature="1065:1165" ph="select url, url_info_all_t" />
+            <marker date="1479728602870" expanded="true" signature="1065:1185" ph="select url, url_info_all_t" />
+            <marker date="1479728602870" expanded="true" signature="1268:1350" ph="select url, url_info_all_t" />
+            <marker date="1479728602870" expanded="true" signature="1268:1370" ph="select url, url_info_all_t" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/heheda.log" />
+    <entry file="file://$PROJECT_DIR$/xiaoqu_url/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#193#203#0" expanded="true" />
+            <marker date="1479800580428" expanded="true" signature="3027:3201" ph="insert into url_xiaoqu_all_t... " />
+            <marker date="1479800580428" expanded="true" signature="4156:4210" ph="update url_x... " />
+            <marker date="1479800580428" expanded="true" signature="4661:4839" ph="insert into url_info_all_t... " />
+            <marker date="1479800580428" expanded="true" signature="5809:5866" ph="update url_i... " />
+            <marker date="1479800580428" expanded="true" signature="6373:6564" ph="insert into url_info_all_t... " />
+            <marker date="1479800580428" expanded="true" signature="7523:7580" ph="update url_i... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

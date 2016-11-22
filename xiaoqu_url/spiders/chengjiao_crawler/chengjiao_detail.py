@@ -35,10 +35,10 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         city = self.config.get(self.spider_name, 'city')
         if self.district:
             sql = """
-                    select url, url_md5, district from url_info_all_t where city="%s" and district='%s' and taskstatus=0 and datatype=deal;
+                    select url, url_md5, district from url_info_all_t where city="%s" and district='%s' and taskstatus=0 and datatype='deal';
                   """ % (city, self.district)
         else:
-            sql = """select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype=deal;""" % city
+            sql = """select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype='deal';""" % city
         print 'sql__--: ', sql
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
@@ -77,6 +77,6 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item["unit_price"] = base_info.xpath(self.config.get(self.spider_name, "unit_price")).extract_first()
         self.item["url"] = response.url
         self.item["house_year"] = base_info.xpath(self.config.get(self.spider_name, "house_year")).extract_first()
-        self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %M:%M:%S')
+        self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         self.item["district"] = self.district
         yield self.item
