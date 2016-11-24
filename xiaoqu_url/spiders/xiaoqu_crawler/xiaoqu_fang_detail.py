@@ -20,7 +20,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.config = ConfigParser.ConfigParser()
         self.config.read('./xiaoqu_url/config_package/xiaoqu_detail.ini')
         self.item = XiaoquDetailItem()
-        self.tag = None
+        # self.tag = None
 
     def start_requests(self):
         """
@@ -32,7 +32,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         sql = """select url, id from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
-            self.tag = url_tuple[1]
+            # self.tag = url_tuple[1]
             logs.debug('url: %s' % url_tuple[0])
             logs.debug('self.tag: %s' % url_tuple[1])
             if url_tuple[0].startswith('http'):

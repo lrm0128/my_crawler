@@ -140,9 +140,13 @@ class XiaoquUrlPipeline(object):
             ip = get_ip_address('eth0')
             item = dict(item)
             file_name = '%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'), datetime.datetime.now().strftime('%Y%m%d'))
-            self.open_result_file(file_name, item)
-            tag = spider.tag
+            tag = item['id']
+            logs.debug('tag: %s' % tag)
+            logs.debug('city+district+name : %s' %(item['city']+item['district']+item['name']))
             sql = """update url_xiaoqu_all_t set taskstatus=1 where id='%s';""" % tag
+            logs.debug('sql: %s' % sql)
+            item.pop('id')
+            self.open_result_file(file_name, item)
             self.update_sql_execute(sql)
             return item
         elif spider.name in ["chengjiao_url", "sh_chengjiao_url"]:
@@ -170,9 +174,10 @@ class XiaoquUrlPipeline(object):
             self.process_data(item)
             result_file = '%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'), datetime.datetime.now().strftime('%Y%m%d'))
             self.open_result_file(result_file, item)
+            # url_md5 = self.transformd5(item['url'])
             sql = """
-            update url_info_all_t set taskstatus=1 where url_md5='%s'
-            """ % spider.tag
+            update url_info_all_t set taskstatus=1 where url='%s'
+            """ % item['url']
             logs.debug("sql: %s" % sql)
             self.update_sql_execute(sql)
             return item

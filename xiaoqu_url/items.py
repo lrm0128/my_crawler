@@ -59,6 +59,7 @@ class XiaoquUrlItem(scrapy.Item):
 
 
 class XiaoquDetailItem(scrapy.Item):
+    id = scrapy.Field()
     building_area = scrapy.Field()
     occupy_area = scrapy.Field()
     poi = scrapy.Field()

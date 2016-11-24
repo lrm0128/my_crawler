@@ -25,6 +25,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.tag = None
         self.district = district
         self.bizcircle = None
+        self.names = None
 
     def start_requests(self):
         """
@@ -38,14 +39,12 @@ class CrawlXiaoQuDetail(scrapy.Spider):
                     select url, id, district, bizcircle from url_xiaoqu_all_t where city="%s" and district='%s' and taskstatus=0;
                   """ % (city, self.district)
         else:
-            sql = """select url, id, district, bizcircle from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
+            sql = """select url, name from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
         print 'sql__--: ', sql
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
-            self.tag = url_tuple[1]
-            self.district = url_tuple[2]
-            self.bizcircle = url_tuple[3]
-            logs.debug('url: %s' % url_tuple[0])
+            # logs.debug('self.tag + self.district + self.name: %s' % self.tag+self.district+self.names)
+            # logs.debug('url hehe da da: %s' % url_tuple[0])
             if url_tuple[0].startswith('http'):
                 yield self.make_requests_from_url(url_tuple[0])
             else:
@@ -57,6 +56,11 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         :param response:
         :return:
         """
+        mysql_conn = MySQLConn()
+        sql = """
+            select id, district, bizcircle from url_xiaoqu_all_t where url = '%s';
+        """ % response.url
+        data_tuple = mysql_conn.select_data(sql)
         self.item['building_area'] = self.config.get(self.spider_name, 'building_area')
         self.item['occupy_area'] = self.config.get(self.spider_name, 'occupy_area')
         self.item['house_num'] = response.xpath(self.config.get(self.spider_name, 'house_num_xpath')).extract_first()
@@ -78,8 +82,9 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item['property_company'] = response.xpath(self.config.get(self.spider_name, 'property_company_xpath')).extract_first()
         self.item['poi'] = response.xpath(self.config.get(self.spider_name, 'posi_xpath')).extract_first()
         self.item['building_num'] = response.xpath(self.config.get(self.spider_name, 'building_num_xpath')).extract_first()
-        self.item['district'] = self.district
-        self.item['bizcircle'] = self.bizcircle
+        self.item['id'] = data_tuple[0][0]
+        self.item['district'] = data_tuple[0][1]
+        self.item['bizcircle'] = data_tuple[0][2]
         self.item['rent_price'] = self.config.get(self.spider_name, 'rent_price')
         self.item['city'] = self.config.get(self.spider_name, 'city')
         self.item['province'] = self.config.get(self.spider_name, 'province')

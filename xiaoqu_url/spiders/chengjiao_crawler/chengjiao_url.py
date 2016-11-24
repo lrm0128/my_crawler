@@ -31,8 +31,9 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         :param response:
         :return:
         """
+        print "heheda"
         district_start = self.config.getint(self.spider_name, 'district_start')
-        area_url_part = response.xpath(self.config.get(self.spider_name, 'district_xpath'))[district_start:]
+        area_url_part = response.xpath(self.config.get(self.spider_name, 'district_xpath'))[district_start:1]
         for area_url in area_url_part:
             district = area_url.xpath('text()').extract_first()
             area_url_full = response.urljoin(area_url.xpath('@href').extract_first())
@@ -98,10 +99,12 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         :param url:
         :return:
         """
+        if page_num > 100:
+            page_num = 100
         url_list = []
-        if "fang" in self.spider_name:
+        if "fangtianxia" in self.spider_name:
             for i in range(1, page_num+1):
-                next_page = url[:-6] + str(i) + '_0_0/'
+                next_page = url + 'i3' + str(i) + '/'
                 url_list.append(next_page)
         elif "lianjia1" in self.spider_name:
             for i in range(1, page_num+1):
@@ -135,10 +138,8 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             return
 
         for chengjiao in chengjiao_list:
-            print "chengjiao: ", chengjiao
             item['provice'] = self.config.get(self.spider_name, 'provice')
             item['city'] = self.config.get(self.spider_name, 'city')
-            # item['site'] = self.config.get(self.spider_name, 'site')
             item['Taskstatus'] = self.config.get(self.spider_name, 'Taskstatus')
             item['district'] = district
             item['bizcircle'] = bizcircle
@@ -148,4 +149,3 @@ class CrawlXiaoQuSpider(scrapy.Spider):
             item['datatype'] = self.config.get(self.spider_name, 'datatype')
             logs.debug("kanghe: %s", item)
             yield item
-

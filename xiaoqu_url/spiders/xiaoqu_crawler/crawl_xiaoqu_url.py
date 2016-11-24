@@ -89,6 +89,7 @@ class CrawlXiaoQuSpider(scrapy.Spider):
         :return:
         """
         url_list = []
+        page_num = min(page_num, 100)
         if "fang" in self.spider_name:
             for i in range(1, page_num+1):
                 next_page = url[:-6] + str(i) + '_0_0/'
