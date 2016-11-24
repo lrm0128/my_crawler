@@ -1,4 +1,3 @@
 *.pyc
-*\d+
-*json
-*log
+.idea
+*.xml

@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dad50529-018d-4a54-baf0-af41fff612aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/fangtianxia_chengjiao_detail.py" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao/sh_lianjia_chengjiao.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/sh_lianjia_chengjiao/sh_lianjia_chengjiao_detail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_detail_cfg.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" afterPath="$PROJECT_DIR$/xiaoqu_url/config_package/chengjiao_url_cfg.ini" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/items.py" afterPath="$PROJECT_DIR$/xiaoqu_url/items.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" afterPath="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/settings.py" afterPath="$PROJECT_DIR$/xiaoqu_url/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_url.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_url.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/crawl_xiaoqu_url.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_fang_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_fang_detail.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_lianjia_detail.py" afterPath="$PROJECT_DIR$/xiaoqu_url/spiders/xiaoqu_crawler/xiaoqu_lianjia_detail.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out_put/.gitignore" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
     </list>
     <ignored path="xiaoqu_url.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chengjiao_detail.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="chengjiao_detail.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="72" column="45" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="45" />
+            <state relative-caret-position="382">
+              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
               <folding>
                 <marker date="1479970787332" expanded="true" signature="1070:1170" ph="select url, url_info_all_t" />
                 <marker date="1479970787332" expanded="true" signature="1070:1190" ph="select url, url_info_all_t" />
@@ -81,6 +70,16 @@
                 <marker date="1479970787332" expanded="true" signature="1296:1398" ph="select url, url_info_all_t" />
                 <marker date="1479970787332" expanded="true" signature="2010:2062" ph="select url_m... url_info_all_t" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,7 +99,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chendu_ershoufang_url.log" />
         <option value="$PROJECT_DIR$/out_put/chengdu_lianjia_chengjiao.json" />
         <option value="$PROJECT_DIR$/shanghai_ershoufang_url.log" />
         <option value="$PROJECT_DIR$/out_put/shanghai_lianjia_chengjiao.json" />
@@ -151,6 +149,7 @@
         <option value="$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py" />
         <option value="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
         <option value="$PROJECT_DIR$/xiaoqu_url/pipelines.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -206,92 +205,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiaoqu_url" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiaoqu_url" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spiders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiaoqu_url" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spiders" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiaoqu_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="xiaoqu_url" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config_package" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="all_spider_crawler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out_put" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -600,7 +513,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/heheda.html" />
     <entry file="file://$PROJECT_DIR$/out_put/192.168.1.101.dongguan.lianjia.ershoufang.json.20161118" />
     <entry file="file://$PROJECT_DIR$/out_put/dongguan_lianjia_ershoufang.json" />
     <entry file="file://$PROJECT_DIR$/dongguan_lianjia_url.log" />
@@ -704,6 +616,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="9674" column="5" selection-start-line="9674" selection-start-column="5" selection-end-line="9674" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -892,8 +805,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/xiaoqu_url/spiders/chengjiao_crawler/chengjiao_detail.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="72" column="45" selection-start-line="72" selection-start-column="39" selection-end-line="72" selection-end-column="45" />
+        <state relative-caret-position="382">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
           <folding>
             <marker date="1479970787332" expanded="true" signature="1070:1170" ph="select url, url_info_all_t" />
             <marker date="1479970787332" expanded="true" signature="1070:1190" ph="select url, url_info_all_t" />
@@ -901,6 +814,14 @@
             <marker date="1479970787332" expanded="true" signature="1296:1398" ph="select url, url_info_all_t" />
             <marker date="1479970787332" expanded="true" signature="2010:2062" ph="select url_m... url_info_all_t" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="5" selection-start-line="0" selection-start-column="5" selection-end-line="0" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
