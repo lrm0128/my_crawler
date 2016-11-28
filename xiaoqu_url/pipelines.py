@@ -139,6 +139,7 @@ class XiaoquUrlPipeline(object):
             config = self.open_config_file(cfg_path)
             ip = get_ip_address('eth0')
             item = dict(item)
+            item = self.process_data(item)
             file_name = '%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'), datetime.datetime.now().strftime('%Y%m%d'))
             tag = item['id']
             logs.debug('tag: %s' % tag)
@@ -174,6 +175,7 @@ class XiaoquUrlPipeline(object):
             self.process_data(item)
             result_file = '%s.%s.%s' % (ip, config.get(spider.spider_name, 'json_file'), datetime.datetime.now().strftime('%Y%m%d'))
             self.open_result_file(result_file, item)
+            logs.debug('city+district+name: %s' % (item['city'] + item['district'] + item['name']))
             # url_md5 = self.transformd5(item['url'])
             sql = """
             update url_info_all_t set taskstatus=1 where url='%s'

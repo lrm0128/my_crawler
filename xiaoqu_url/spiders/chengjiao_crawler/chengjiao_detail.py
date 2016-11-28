@@ -16,15 +16,15 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         'www.baidu.com',
     )
 
-    def __init__(self, spider_name, district=None):
+    def __init__(self, spider_name, district=None, site=None):
         super(CrawlXiaoQuDetail, self).__init__()
         self.spider_name = spider_name
         self.config = ConfigParser.ConfigParser()
         self.config.read('./xiaoqu_url/config_package/chengjiao_detail_cfg.ini')
         self.item = HouseDetailItems()
         # tag就是数据库中的id项，用于完成任务update的时候用
-        # self.district = district
-        # self.site = site
+        self.district = district
+        self.site = site
 
     def start_requests(self):
         """
@@ -33,19 +33,18 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         """
         mysql_conn = MySQLConn()
         city = self.config.get(self.spider_name, 'city')
+        sql = """
+            select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype='deal'
+        """ % city
         if self.district:
-            sql = """
-                    select url, url_md5, district from url_info_all_t where city="%s" and district='%s' and taskstatus=0 and datatype='deal';
-                  """ % (city, self.district)
-        else:
-            sql = """
-                      select url, url_md5, district from url_info_all_t where city="%s" and taskstatus=0 and datatype='deal';
-                  """ % city
-        print 'sql__--: ', sql
+            sql += "and district='%s'" % self.district
+        if self.site:
+            sql += "and site='%s'" % self.site
+        logs.debug('sql__--: %s'% sql)
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
             # logs.debug('self.debug: %s ' % self.tag)
-            logs.debug('url: %s' % url_tuple[0])
+            # logs.debug('url: %s' % url_tuple[0])
             if url_tuple[0].startswith('http'):
                 yield self.make_requests_from_url(url_tuple[0])
             else:
@@ -84,5 +83,5 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         self.item["url"] = response.url
         self.item["house_year"] = base_info.xpath(self.config.get(self.spider_name, "house_year")).extract_first()
         self.item["crawl_time"] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        self.item["district"] = data_tuple[0][0]
+        self.item["district"] = base_info.xpath(self.config.get(self.spider_name, "district")).extract_first()
         yield self.item

@@ -15,7 +15,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         'www.baidu.com',
     )
 
-    def __init__(self, spider_name, district=None):
+    def __init__(self, spider_name, district=None, site=None):
         super(CrawlXiaoQuDetail, self).__init__()
         self.spider_name = spider_name
         self.config = ConfigParser.ConfigParser()
@@ -24,6 +24,7 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         # tag就是数据库中的id项，用于完成任务update的时候用
         self.tag = None
         self.district = district
+        self.site = site
         self.bizcircle = None
         self.names = None
 
@@ -34,12 +35,13 @@ class CrawlXiaoQuDetail(scrapy.Spider):
         """
         mysql_conn = MySQLConn()
         city = self.config.get(self.spider_name, 'city')
+        sql = """
+                select url from url_xiaoqu_all_t where city="%s" and taskstatus=0
+              """ % city
         if self.district:
-            sql = """
-                    select url, id, district, bizcircle from url_xiaoqu_all_t where city="%s" and district='%s' and taskstatus=0;
-                  """ % (city, self.district)
-        else:
-            sql = """select url, name from url_xiaoqu_all_t where city="%s" and taskstatus=0;""" % city
+            sql += "and district='%s'" % self.district
+        if self.site:
+            sql += "and site='%s'" % self.site
         print 'sql__--: ', sql
         data = mysql_conn.select_data(sql)
         for url_tuple in data:
